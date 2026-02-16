@@ -34,7 +34,7 @@
         button.addEventListener("click", async () => {
             result.textContent = "Calling backend...";
             try {
-                const response = await fetch("http://localhost:8081/");
+                const response = await fetch("/api/calculate_pi");
                 const data = await response.json();
                 result.textContent = JSON.stringify(data, null, 2);
             } catch (err) {
