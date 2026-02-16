@@ -2,7 +2,9 @@
 This solution create the 3 folders with the number of files that is defined in the variables.tf file.
 Commands:
 > terraform init
+> 
 > terraform plan
+> 
 > terraform apply -auto-approve
 
 # SOLUTION 2
