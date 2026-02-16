@@ -5,14 +5,30 @@ services:
     build: ./frontend
     ports:
       - "8080:80"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.50"
+          memory: 512M
+    networks:
+      - app_network
     depends_on:
       - backend
 
   backend:
     build: ./backend
-    ports:
-      - "8081:5000"
+    expose:
+      - "5000"
+    environment:
+      - FRONTEND_HOST=http://localhost:8080
     deploy:
       resources:
         limits:
-          cpus: "0.10"
+          cpus: "2"
+          memory: 1GB
+    networks:
+      - app_network
+
+networks: 
+  app_network: 
+    driver: bridge
