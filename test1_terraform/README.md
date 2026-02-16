@@ -1,6 +1,8 @@
 # SOLUTION 1
 This solution create the 3 folders with the number of files that is defined in the variables.tf file.
+
 Commands:
+
 > terraform init
 > 
 > terraform plan
@@ -9,7 +11,9 @@ Commands:
 
 # SOLUTION 2
 This solution create the folder with the number of files (default: QA / 10), in the command you can define what environment and the message for the txt files and in the {env_name}.tfvars file you can define the number of txt files to create for this environment.
+
 Command:
+
 > terraform init
 > 
 > terraform plan
