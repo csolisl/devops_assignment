@@ -1,6 +1,8 @@
-SELECT a.*
-FROM users u
-RIGHT JOIN addresses a
-  ON a.user_id = u.id
-WHERE u.id = 42
-ORDER BY a.created_at DESC;
+SELECT count(*) 
+FROM addresses 
+WHERE user_id = 43;
+
+SELECT * 
+FROM addresses
+WHERE user_id = 43 
+ORDER BY created_at DESC;
