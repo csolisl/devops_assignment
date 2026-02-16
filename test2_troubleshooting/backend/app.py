@@ -1,8 +1,8 @@
+import os
 import time
 from flask import Flask, jsonify, make_response, request
 
 app = Flask(__name__)
-
 
 def calculate_pi(iterations: int = 1_000_000) -> float:
     pi = 0.0
@@ -13,7 +13,7 @@ def calculate_pi(iterations: int = 1_000_000) -> float:
     return 4.0 * pi
 
 
-@app.get("/")
+@app.get("/api/calculate_pi")
 def root():
     user_agent = request.headers.get("User-Agent", "").lower()
     if "curl" in user_agent:
